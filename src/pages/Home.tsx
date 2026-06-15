@@ -18,12 +18,7 @@ const services = [
   { icon: 'bi-brush-fill', title: 'Exterior Painting', desc: 'Curb appeal transformations with high-quality, weather-resistant exterior coatings.' },
 ];
 
-const stats = [
-  { number: '+100', label: 'Projetos Concluídos' },
-  { number: '3', label: 'States Served' },
-  { number: '10+', label: 'Years Experience' },
-  { number: '5★', label: 'Client Reviews' },
-];
+
 
 const process = [
   { num: '01', title: 'Free Consultation', desc: 'We visit your property, understand your vision, and assess the scope of work.' },
