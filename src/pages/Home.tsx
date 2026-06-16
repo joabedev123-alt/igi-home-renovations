@@ -21,10 +21,46 @@ const services = [
 
 
 const process = [
-  { num: '01', title: 'Consulta gratuita', desc: 'Visitamos a sua propriedade, compreendemos a sua visão e avaliamos o âmbito do trabalho.' },
-  { num: '02', title: 'Estimativa detalhada', desc: 'Orçamento transparente e detalhado, sem taxas ocultas ou surpresas.' },
-  { num: '03', title: 'Execução especializada', desc: 'Nossa equipe qualificada entrega serviços de alta qualidade dentro do prazo.' },
-  { num: '04', title: 'Guia final', desc: 'Analisamos juntos cada detalhe até que você esteja 100% satisfeito.' },
+  { icon: 'bi-chat-dots-fill', title: 'Free Consultation', desc: 'We visit your property, understand your vision, and evaluate the scope of work.' },
+  { icon: 'bi-file-earmark-text-fill', title: 'Detailed Estimate', desc: 'Transparent and detailed budgeting, with no hidden fees or surprises.' },
+  { icon: 'bi-tools', title: 'Expert Execution', desc: 'Our qualified team delivers high-quality services on time.' },
+  { icon: 'bi-check-circle-fill', title: 'Final Walkthrough', desc: 'We review every detail together until you are 100% satisfied.' },
+];
+
+const testimonials = [
+  {
+    name: 'Carlos Oliveira',
+    role: 'Homeowner',
+    text: 'The IGI team exceeded our expectations. The kitchen remodel was completed ahead of schedule and the finish was impeccable. Highly recommended!',
+    rating: 5,
+  },
+  {
+    name: 'Mariana Souza',
+    role: 'Real Estate Investor',
+    text: 'I work with IGI on all my fix & flip projects. They are professional, transparent with costs, and always deliver top-quality results.',
+    rating: 5,
+  },
+  {
+    name: 'Roberto Almeida',
+    role: 'Homeowner',
+    text: 'We replaced all the flooring in the house and did an exterior painting. The process was simple and stress-free, just as promised. Our house looks brand new!',
+    rating: 5,
+  }
+];
+
+const serviceAreas = [
+  {
+    state: 'Florida',
+    counties: ['Hillsborough County', 'Polk County', 'Osceola County', 'Orange County', 'Seminole County', 'Brevard County', 'Lake County', 'Volusia County']
+  },
+  {
+    state: 'Pennsylvania',
+    counties: ['Chester County', 'Montgomery County', 'Bucks County', 'Delaware County', 'Philadelphia County']
+  },
+  {
+    state: 'New Jersey',
+    counties: ['Burlington County', 'Camden County', 'Mercer County', 'Gloucester County', 'Middlesex County', 'Monmouth County']
+  }
 ];
 
 const Home: React.FC = () => {
@@ -260,28 +296,131 @@ const Home: React.FC = () => {
       <section className="section-padding" style={{ background: 'white' }}>
         <div className="container-custom">
           <motion.div {...fadeUp} style={{ textAlign: 'center', marginBottom: '56px' }}>
-            <span className="section-label" style={{ justifyContent: 'center' }}>Como funciona</span>
+            <span className="section-label" style={{ justifyContent: 'center' }}>How It Works</span>
             <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: '800', marginBottom: '16px' }}>
-              Processo simples e sem estresse
+              Simple and stress-free process
             </h2>
             <p style={{ fontSize: '17px', color: '#475569', maxWidth: '500px', margin: '0 auto', lineHeight: '1.7' }}>
-              Começar a sua reforma é fácil. Nós cuidamos de todos os detalhes para que você não precise se preocupar com nada.
+              Starting your renovation is easy. We take care of all the details so you don't have to worry about a thing.
             </p>
           </motion.div>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
             {process.map((step, i) => (
               <motion.div
-                key={step.num}
+                key={step.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 1.5 }}
+                transition={{ duration: 0.5, delay: i * 0.15 }}
                 className="process-step"
-                style={{ padding: '0 20px', flex: '1 1 200px', maxWidth: '280px' }}
+                style={{ padding: '0 20px', flex: '1 1 200px', maxWidth: '280px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}
               >
-                <div className="process-number">{step.num}</div>
-                <h4 style={{ fontWeight: '700', fontSize: '16px', marginBottom: '8px' }}>{step.title}</h4>
+                <div style={{
+                  width: '72px', height: '72px', borderRadius: '50%',
+                  background: 'linear-gradient(135deg, rgba(14,143,216,0.1), rgba(52,210,180,0.1))',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  marginBottom: '20px', border: '1px solid rgba(14,143,216,0.2)'
+                }}>
+                  <i className={`bi ${step.icon}`} style={{ fontSize: '32px', color: '#0E8FD8' }} />
+                </div>
+                <h4 style={{ fontWeight: '700', fontSize: '18px', marginBottom: '12px', color: '#11132A' }}>{step.title}</h4>
                 <p style={{ fontSize: '14px', color: '#475569', lineHeight: '1.6' }}>{step.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="section-padding bg-section-dark">
+        <div className="container-custom">
+          <motion.div {...fadeUp} style={{ textAlign: 'center', marginBottom: '56px' }}>
+            <span className="section-label" style={{ justifyContent: 'center' }}>Testimonials</span>
+            <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: '800', color: 'white', marginBottom: '16px' }}>
+              What our clients say
+            </h2>
+            <p style={{ fontSize: '17px', color: 'rgba(255,255,255,0.6)', maxWidth: '600px', margin: '0 auto', lineHeight: '1.7' }}>
+              Our greatest achievement is the satisfaction of those who trust our work. See the experiences of some of our clients.
+            </p>
+          </motion.div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px' }}>
+            {testimonials.map((t, i) => (
+              <motion.div
+                key={t.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.15 }}
+                className="card-dark"
+                style={{ padding: '32px', display: 'flex', flexDirection: 'column', height: '100%' }}
+              >
+                <div style={{ display: 'flex', gap: '4px', marginBottom: '16px' }}>
+                  {[...Array(t.rating)].map((_, index) => (
+                    <i key={index} className="bi bi-star-fill" style={{ color: '#F59E0B', fontSize: '16px' }} />
+                  ))}
+                </div>
+                <p style={{ fontSize: '15px', lineHeight: '1.7', color: 'rgba(255,255,255,0.8)', flexGrow: 1, marginBottom: '24px', fontStyle: 'italic' }}>
+                  "{t.text}"
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'linear-gradient(135deg, #0E8FD8, #34D2B4)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 'bold', fontSize: '18px' }}>
+                    {t.name.charAt(0)}
+                  </div>
+                  <div>
+                    <div style={{ fontWeight: '700', color: 'white', fontSize: '15px' }}>{t.name}</div>
+                    <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)' }}>{t.role}</div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICE AREAS */}
+      <section className="section-padding" style={{ background: 'white' }}>
+        <div className="container-custom">
+          <motion.div {...fadeUp} style={{ textAlign: 'center', marginBottom: '56px' }}>
+            <span className="section-label" style={{ justifyContent: 'center' }}>Service Areas</span>
+            <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: '800', marginBottom: '16px' }}>
+              Where We Work
+            </h2>
+            <p style={{ fontSize: '17px', color: '#475569', maxWidth: '800px', margin: '0 auto', lineHeight: '1.7' }}>
+              Serving the Greater Philadelphia Metro Area including Bucks, Montgomery, Chester, Delaware and Philadelphia Counties in PA, and Burlington, Camden and Mercer Counties in NJ. Proudly serving Florida.
+            </p>
+          </motion.div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px' }}>
+            {serviceAreas.map((area, i) => (
+              <motion.div
+                key={area.state}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.15 }}
+                style={{ 
+                  background: '#F8FAFC', 
+                  borderRadius: '16px', 
+                  padding: '32px', 
+                  border: '1px solid #E2E8F0',
+                  boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)'
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
+                  <i className="bi bi-geo-alt-fill" style={{ color: '#0E8FD8', fontSize: '24px' }} />
+                  <h3 style={{ fontSize: '20px', fontWeight: '800', color: '#0F1B3D', margin: 0 }}>
+                    {area.state}
+                  </h3>
+                </div>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                  {area.counties.map(county => (
+                    <li key={county} style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#475569', fontSize: '15px' }}>
+                      <i className="bi bi-check-circle-fill" style={{ color: '#34D2B4', fontSize: '14px' }} />
+                      {county}
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             ))}
           </div>

@@ -62,7 +62,7 @@ const Header: React.FC = () => {
         <div className="container-custom" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '96px' }}>
           {/* Logo */}
           <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
-            <img src="/logo.png" alt="IGI Home Renovations" style={{ height: '160px', width: 'auto' }} />
+            <img src="/logo.png" alt="IGI Home Renovations" style={{ height: '80px', width: 'auto' }} />
           </Link>
 
           {/* Desktop Nav + CTAs */}

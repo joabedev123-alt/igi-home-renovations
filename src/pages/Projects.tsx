@@ -11,12 +11,89 @@ const fadeUp = {
 const categories = ['All', 'Bathroom', 'Kitchen', 'Flooring', 'Painting', 'Full Renovation'];
 
 const projects = [
-  { id: 1, title: 'Master Bath Remodel', category: 'Bathroom', location: 'Kissimmee, FL', desc: 'Complete gut renovation with custom tile shower, floating vanity, and modern fixtures.' },
-  { id: 2, title: 'Guest Bathroom Refresh', category: 'Bathroom', location: 'Orlando, FL', desc: 'Tile surround, new vanity, and fresh paint to transform a dated bathroom.' },
-  { id: 3, title: 'Kitchen Renovation', category: 'Kitchen', location: 'St. Cloud, FL', desc: 'Full kitchen remodel with new cabinets, quartz countertops, and tile backsplash.' },
-  { id: 4, title: 'LVP Flooring — Full Home', category: 'Flooring', location: 'Osceola County, FL', desc: 'Luxury vinyl plank throughout entire 3-bedroom home, including transitions and molding.' },
-  { id: 5, title: 'Exterior Paint — Investment Property', category: 'Painting', location: 'Orange County, FL', desc: 'Full exterior repaint with pressure wash, stucco patch, and weather-resistant coating.' },
-  { id: 6, title: 'Fix-and-Flip Full Reno', category: 'Full Renovation', location: 'New Jersey', desc: 'Complete property overhaul for resale — flooring, painting, bathrooms, and kitchen.' },
+  { 
+    id: 1, 
+    title: 'Master Bath Remodel', 
+    category: 'Bathroom', 
+    location: 'Kissimmee, FL', 
+    desc: 'Complete gut renovation with custom tile shower, floating vanity, and modern fixtures.',
+    images: [
+      '/banheiros/banheiro1.jpeg',
+      '/banheiros/banheiro2.jpeg',
+      '/banheiros/banheiro3.jpeg',
+      '/banheiros/banheiro4.jpeg',
+      '/banheiros/banheiro5.jpeg'
+    ]
+  },
+  { 
+    id: 2, 
+    title: 'Transformation: Before and After', 
+    category: 'Bathroom', 
+    location: 'Orlando, FL', 
+    desc: 'See the incredible before and after of this renovation. Custom tile work, new vanity, and fresh paint completely transformed this dated bathroom.',
+    images: [
+      '/Before and After/Antes 01.jpeg',
+      '/Before and After/Depois 01.jpeg',
+      '/Before and After/Antes 02.jpeg',
+      '/Before and After/Depois 02.jpeg',
+      '/Before and After/Antes 03.jpeg',
+      '/Before and After/Depois 03.jpeg',
+      '/Before and After/Antes 04.jpeg',
+      '/Before and After/Depois 04.jpeg'
+    ]
+  },
+  { 
+    id: 3, 
+    title: 'Complete Kitchen Renovation', 
+    category: 'Kitchen', 
+    location: 'St. Cloud, FL', 
+    desc: 'Full kitchen remodel with new cabinets, quartz countertops, and elegant tile backsplash.',
+    images: [
+      '/kitchen/cozinha1.jpeg',
+      '/kitchen/cozinha2.png',
+      '/kitchen/WhatsApp Image 2026-06-16 at 11.42.40.jpeg',
+      '/kitchen/WhatsApp Image 2026-06-16 at 11.42.40 (1).jpeg',
+      '/kitchen/WhatsApp Image 2026-06-16 at 11.42.40 (2).jpeg',
+      '/kitchen/WhatsApp Image 2026-06-16 at 11.42.40 (3).jpeg',
+      '/kitchen/WhatsApp Image 2026-06-16 at 11.42.41.jpeg'
+    ]
+  },
+  { 
+    id: 4, 
+    title: 'Finished Basement Transformation', 
+    category: 'Full Renovation', 
+    location: 'Pennsylvania', 
+    desc: 'Complete basement finishing including framing, drywall, custom flooring, and modern recessed lighting.',
+    images: [
+      '/Basements/Basements1.jpeg',
+      '/Basements/Basements2.jpeg',
+      '/Basements/Basements3.jpeg',
+      '/Basements/Basements44.jpeg'
+    ]
+  },
+  { 
+    id: 5, 
+    title: 'Epoxy Garage Floor Coating', 
+    category: 'Flooring', 
+    location: 'Orange County, FL', 
+    desc: 'Professional epoxy floor application providing a clean, seamless, and high-durability surface for garages and basements.',
+    images: [
+      '/Epoxy Floor Application/aplicação1.jpeg'
+    ]
+  },
+  { 
+    id: 6, 
+    title: 'Luxury Vinyl Plank Installation', 
+    category: 'Flooring', 
+    location: 'New Jersey', 
+    desc: 'Premium LVP flooring installation throughout the entire living area, providing a beautiful, durable, and waterproof finish.',
+    images: [
+      '/Flooring/Flooring1.jpeg',
+      '/Flooring/WhatsApp Image 2026-06-16 at 11.44.10.jpeg',
+      '/Flooring/WhatsApp Image 2026-06-16 at 11.44.10 (1).jpeg',
+      '/Flooring/WhatsApp Image 2026-06-16 at 11.44.10 (2).jpeg'
+    ]
+  },
   { id: 7, title: 'Interior Painting — 4-Unit', category: 'Painting', location: 'Orlando, FL', desc: 'Multi-unit interior painting for property management company with fast 3-day turnaround.' },
   { id: 8, title: 'Ceramic Tile Bathroom', category: 'Bathroom', location: 'Kissimmee, FL', desc: 'Floor-to-ceiling ceramic tile installation in a primary bathroom shower and floor.' },
   { id: 9, title: 'Kitchen Cabinet Refresh', category: 'Kitchen', location: 'Pennsylvania', desc: 'Cabinet painting, new hardware, and backsplash tile to modernize a dated kitchen.' },
@@ -24,6 +101,81 @@ const projects = [
   { id: 11, title: 'Full Home Interior Paint', category: 'Painting', location: 'Osceola County, FL', desc: 'Complete interior paint job with wall prep, priming, ceilings, trim, and doors.' },
   { id: 12, title: 'Investor Renovation Package', category: 'Full Renovation', location: 'New Jersey', desc: 'Bathroom, kitchen refresh, LVP flooring, and full interior paint for resale.' },
 ];
+
+const ProjectCard = ({ project, index }: { project: any, index: number }) => {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  const nextImage = () => {
+    if (project.images) {
+      setCurrentImage((prev) => (prev === project.images.length - 1 ? 0 : prev + 1));
+    }
+  };
+
+  const prevImage = () => {
+    if (project.images) {
+      setCurrentImage((prev) => (prev === 0 ? project.images.length - 1 : prev - 1));
+    }
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, delay: index * 0.05 }}
+      className="card-premium"
+      style={{ overflow: 'hidden' }}
+    >
+      {project.images ? (
+        <div style={{ position: 'relative', height: '240px', borderBottom: '1px solid rgba(88,199,232,0.1)' }}>
+          <img 
+            src={project.images[currentImage]} 
+            alt={`${project.title} foto ${currentImage + 1}`} 
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+          />
+          
+          {/* Arrows */}
+          <button onClick={prevImage} style={{ position: 'absolute', left: '8px', top: '50%', transform: 'translateY(-50%)', background: 'rgba(15,27,61,0.5)', color: 'white', border: 'none', borderRadius: '50%', width: '28px', height: '28px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', backdropFilter: 'blur(4px)', transition: 'background 0.2s' }}>
+            <i className="bi bi-chevron-left" style={{ fontSize: '13px' }}></i>
+          </button>
+          <button onClick={nextImage} style={{ position: 'absolute', right: '8px', top: '50%', transform: 'translateY(-50%)', background: 'rgba(15,27,61,0.5)', color: 'white', border: 'none', borderRadius: '50%', width: '28px', height: '28px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', backdropFilter: 'blur(4px)', transition: 'background 0.2s' }}>
+            <i className="bi bi-chevron-right" style={{ fontSize: '13px' }}></i>
+          </button>
+          
+          {/* Dots */}
+          <div style={{ position: 'absolute', bottom: '10px', left: '0', right: '0', display: 'flex', justifyContent: 'center', gap: '5px' }}>
+            {project.images.map((_: any, idx: number) => (
+              <div key={idx} style={{ width: '5px', height: '5px', borderRadius: '50%', background: currentImage === idx ? 'white' : 'rgba(255,255,255,0.4)', transition: 'background 0.3s' }} />
+            ))}
+          </div>
+        </div>
+      ) : (
+        <div className="photo-placeholder" style={{ minHeight: '220px', borderRadius: '0', margin: '0', border: 'none', borderBottom: '1px dashed rgba(88,199,232,0.2)' }}>
+          <i className="bi bi-image" style={{ fontSize: '36px' }} />
+          <span style={{ fontSize: '13px' }}>Project Photo</span>
+        </div>
+      )}
+      <div style={{ padding: '24px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '10px', gap: '12px' }}>
+          <h3 style={{ fontWeight: '700', fontSize: '17px', lineHeight: '1.3', color: '#11132A' }}>{project.title}</h3>
+          <span style={{
+            background: 'linear-gradient(135deg, rgba(14,143,216,0.1), rgba(52,210,180,0.08))',
+            border: '1px solid rgba(14,143,216,0.2)',
+            borderRadius: '40px', padding: '3px 12px',
+            fontSize: '11px', fontWeight: '600', color: '#0E8FD8',
+            whiteSpace: 'nowrap', flexShrink: 0,
+          }}>
+            {project.category}
+          </span>
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '10px' }}>
+          <i className="bi bi-geo-alt" style={{ color: '#58C7E8', fontSize: '13px' }} />
+          <span style={{ fontSize: '13px', color: '#475569' }}>{project.location}</span>
+        </div>
+        <p style={{ fontSize: '14px', lineHeight: '1.65', color: '#475569' }}>{project.desc}</p>
+      </div>
+    </motion.div>
+  );
+};
 
 const Projects: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -39,10 +191,10 @@ const Projects: React.FC = () => {
           <motion.div {...fadeUp} style={{ maxWidth: '640px' }}>
             <span className="section-label">Our Portfolio</span>
             <h1 style={{ fontFamily: 'Montserrat', fontWeight: '800', fontSize: 'clamp(32px, 5vw, 56px)', color: 'white', lineHeight: '1.15', marginBottom: '20px' }}>
-              Our <span className="gradient-text">Projects</span>
+              Renovation Works: <br /><span className="gradient-text">Before & After</span>
             </h1>
             <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.65)', lineHeight: '1.75' }}>
-              Real work. Real results. Browse our portfolio of completed renovations across Florida, New Jersey, and Pennsylvania.
+              Real work. Incredible results. Browse our portfolio to see complete space transformations in our projects across Florida, New Jersey, and Pennsylvania.
             </p>
           </motion.div>
         </div>
@@ -56,8 +208,19 @@ const Projects: React.FC = () => {
             {categories.map(cat => (
               <button
                 key={cat}
-                className={`filter-tab${activeFilter === cat ? ' active' : ''}`}
                 onClick={() => setActiveFilter(cat)}
+                style={{
+                  padding: '12px 24px',
+                  borderRadius: '30px',
+                  border: 'none',
+                  cursor: 'pointer',
+                  fontWeight: '600',
+                  fontSize: '15px',
+                  transition: 'all 0.3s ease',
+                  background: activeFilter === cat ? '#0E8FD8' : '#0F1B3D',
+                  color: 'white',
+                  boxShadow: activeFilter === cat ? '0 4px 15px rgba(14,143,216,0.3)' : '0 4px 6px rgba(0,0,0,0.1)'
+                }}
               >
                 {cat}
               </button>
@@ -74,38 +237,7 @@ const Projects: React.FC = () => {
               style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 340px), 1fr))', gap: '28px' }}
             >
               {filtered.map((project, i) => (
-                <motion.div
-                  key={project.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: i * 0.05 }}
-                  className="card-premium"
-                  style={{ overflow: 'hidden' }}
-                >
-                  <div className="photo-placeholder" style={{ minHeight: '220px', borderRadius: '0', margin: '0', border: 'none', borderBottom: '1px dashed rgba(88,199,232,0.2)' }}>
-                    <i className="bi bi-image" style={{ fontSize: '36px' }} />
-                    <span style={{ fontSize: '13px' }}>Project Photo</span>
-                  </div>
-                  <div style={{ padding: '24px' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '10px', gap: '12px' }}>
-                      <h3 style={{ fontWeight: '700', fontSize: '17px', lineHeight: '1.3', color: '#11132A' }}>{project.title}</h3>
-                      <span style={{
-                        background: 'linear-gradient(135deg, rgba(14,143,216,0.1), rgba(52,210,180,0.08))',
-                        border: '1px solid rgba(14,143,216,0.2)',
-                        borderRadius: '40px', padding: '3px 12px',
-                        fontSize: '11px', fontWeight: '600', color: '#0E8FD8',
-                        whiteSpace: 'nowrap', flexShrink: 0,
-                      }}>
-                        {project.category}
-                      </span>
-                    </div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '10px' }}>
-                      <i className="bi bi-geo-alt" style={{ color: '#58C7E8', fontSize: '13px' }} />
-                      <span style={{ fontSize: '13px', color: '#475569' }}>{project.location}</span>
-                    </div>
-                    <p style={{ fontSize: '14px', lineHeight: '1.65', color: '#475569' }}>{project.desc}</p>
-                  </div>
-                </motion.div>
+                <ProjectCard key={project.id} project={project} index={i} />
               ))}
             </motion.div>
           </AnimatePresence>
