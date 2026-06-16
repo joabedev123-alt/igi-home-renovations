@@ -98,7 +98,8 @@ const Services: React.FC = () => {
         <div className="container-custom">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 340px), 1fr))', gap: '28px' }}>
             {services.map((s, i) => (
-              <motion.div
+              <motion.a
+                href={`sms:+13214244693?body=${encodeURIComponent(`Hi IGI Home Renovations! I am interested in your ${s.title} services. Can we schedule a free consultation?`)}`}
                 key={s.title}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -106,6 +107,9 @@ const Services: React.FC = () => {
                 transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
                 className="card-premium"
                 style={{
+                  display: 'block',
+                  textDecoration: 'none',
+                  color: 'inherit',
                   padding: '36px 32px',
                   ...(s.highlight ? { border: '1.5px solid rgba(14,143,216,0.35)', background: 'linear-gradient(135deg, #fff 0%, rgba(14,143,216,0.04) 100%)' } : {}),
                 }}
@@ -124,9 +128,9 @@ const Services: React.FC = () => {
                 <div className="icon-box" style={{ marginBottom: '20px' }}>
                   <i className={`bi ${s.icon}`} />
                 </div>
-                <h3 style={{ fontWeight: '700', fontSize: '20px', marginBottom: '12px' }}>{s.title}</h3>
+                <h3 style={{ fontWeight: '700', fontSize: '20px', marginBottom: '12px', color: '#11132A' }}>{s.title}</h3>
                 <p style={{ fontSize: '14px', lineHeight: '1.75', color: '#475569', marginBottom: '24px' }}>{s.desc}</p>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '24px' }}>
                   {s.features.map(f => (
                     <div key={f} style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '13px', color: '#475569' }}>
                       <i className="bi bi-check2-circle" style={{ color: '#34D2B4', fontSize: '16px', flexShrink: 0 }} />
@@ -134,7 +138,24 @@ const Services: React.FC = () => {
                     </div>
                   ))}
                 </div>
-              </motion.div>
+                <div>
+                  <span style={{ 
+                    display: 'inline-flex', 
+                    alignItems: 'center', 
+                    gap: '6px', 
+                    fontSize: '13px', 
+                    fontWeight: '600', 
+                    color: '#0E8FD8', 
+                    background: 'rgba(14,143,216,0.08)', 
+                    border: '1px solid rgba(14,143,216,0.15)', 
+                    padding: '8px 18px', 
+                    borderRadius: '30px',
+                    transition: 'all 0.3s ease'
+                  }}>
+                    Learn more <i className="bi bi-arrow-right" style={{ fontSize: '13px' }}></i>
+                  </span>
+                </div>
+              </motion.a>
             ))}
           </div>
         </div>

@@ -29,21 +29,21 @@ const process = [
 
 const testimonials = [
   {
-    name: 'Carlos Oliveira',
-    role: 'Homeowner',
-    text: 'The IGI team exceeded our expectations. The kitchen remodel was completed ahead of schedule and the finish was impeccable. Highly recommended!',
+    name: 'Allen Y.',
+    role: 'Home Remodeling',
+    text: 'Rafeal and his team did a great job removing my wall! Everyone is very knowledgeable and pleasant. They made sure the job was done correctly and now my living room looks great!',
     rating: 5,
   },
   {
-    name: 'Mariana Souza',
-    role: 'Real Estate Investor',
-    text: 'I work with IGI on all my fix & flip projects. They are professional, transparent with costs, and always deliver top-quality results.',
+    name: 'Sheryl T.',
+    role: 'Exterior Painting',
+    text: 'Raphael, Davi and Louis did a great job assessing the painting of our house and pool deck. They were punctual, worked very professionally and were extremely helpful, answering all our questions. I highly recommend IGI\'s services. People make all the difference!',
     rating: 5,
   },
   {
-    name: 'Roberto Almeida',
-    role: 'Homeowner',
-    text: 'We replaced all the flooring in the house and did an exterior painting. The process was simple and stress-free, just as promised. Our house looks brand new!',
+    name: 'Jeffery H.',
+    role: 'Bathroom Remodeling',
+    text: 'Initially, I reached out to Home Depot, but they wouldn\'t take on a large part of the work. I hired Rafeal and his team to redo the bathroom. They did an amazing job and were super attentive.',
     rating: 5,
   }
 ];
@@ -197,7 +197,8 @@ const Home: React.FC = () => {
 
           <div className="grid-services">
             {services.map((s, i) => (
-              <motion.div
+              <motion.a
+                href={`sms:+13214244693?body=${encodeURIComponent(`Hi IGI Home Renovations! I am interested in your ${s.title} services. Can we schedule a free consultation?`)}`}
                 key={s.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -205,7 +206,7 @@ const Home: React.FC = () => {
                 transition={{ duration: 0.5, delay: i * 0.08 }}
                 whileHover={{ scale: 1.05, translateY: -10, boxShadow: '0 20px 40px rgba(14,143,216,0.15)' }}
                 className="card-dark"
-                style={{ padding: '32px 28px', cursor: 'pointer', position: 'relative', overflow: 'hidden', background: '#0F1B3D', border: '1px solid rgba(88,199,232,0.15)' }}
+                style={{ display: 'block', padding: '32px 28px', cursor: 'pointer', position: 'relative', overflow: 'hidden', background: '#0F1B3D', border: '1px solid rgba(88,199,232,0.15)', textDecoration: 'none' }}
               >
                 <div style={{ position: 'absolute', top: 0, right: 0, width: '120px', height: '120px', background: 'linear-gradient(135deg, rgba(14,143,216,0.15), transparent)', borderBottomLeftRadius: '120px', zIndex: 0 }} />
                 <div className="icon-box" style={{ marginBottom: '20px', position: 'relative', zIndex: 1 }}>
@@ -213,7 +214,24 @@ const Home: React.FC = () => {
                 </div>
                 <h3 style={{ fontWeight: '700', fontSize: '18px', marginBottom: '10px', color: 'white', position: 'relative', zIndex: 1 }}>{s.title}</h3>
                 <p style={{ fontSize: '14px', lineHeight: '1.7', color: 'rgba(255,255,255,0.6)', position: 'relative', zIndex: 1 }}>{s.desc}</p>
-              </motion.div>
+                <div style={{ marginTop: '24px', position: 'relative', zIndex: 1 }}>
+                  <span style={{ 
+                    display: 'inline-flex', 
+                    alignItems: 'center', 
+                    gap: '6px', 
+                    fontSize: '12px', 
+                    fontWeight: '600', 
+                    color: 'white', 
+                    background: 'rgba(255,255,255,0.05)', 
+                    border: '1px solid rgba(88,199,232,0.3)', 
+                    padding: '8px 16px', 
+                    borderRadius: '30px',
+                    transition: 'all 0.3s ease'
+                  }} className="service-cta">
+                    Learn more <i className="bi bi-arrow-right" style={{ fontSize: '12px', color: '#58C7E8' }}></i>
+                  </span>
+                </div>
+              </motion.a>
             ))}
           </div>
 
@@ -346,23 +364,41 @@ const Home: React.FC = () => {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px' }}>
             {testimonials.map((t, i) => (
-              <motion.div
+              <motion.a
+                href="https://www.thumbtack.com/fl/saint-cloud/exterior-painting/igi-home-renovations/service/370187606159753219"
+                target="_blank"
+                rel="noopener noreferrer"
                 key={t.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.15 }}
                 className="card-dark"
-                style={{ padding: '32px', display: 'flex', flexDirection: 'column', height: '100%' }}
+                style={{ padding: '32px', display: 'flex', flexDirection: 'column', height: '100%', textDecoration: 'none', cursor: 'pointer' }}
               >
                 <div style={{ display: 'flex', gap: '4px', marginBottom: '16px' }}>
                   {[...Array(t.rating)].map((_, index) => (
                     <i key={index} className="bi bi-star-fill" style={{ color: '#F59E0B', fontSize: '16px' }} />
                   ))}
                 </div>
-                <p style={{ fontSize: '15px', lineHeight: '1.7', color: 'rgba(255,255,255,0.8)', flexGrow: 1, marginBottom: '24px', fontStyle: 'italic' }}>
-                  "{t.text}"
-                </p>
+                <div style={{ flexGrow: 1, marginBottom: '24px' }}>
+                  <p style={{ 
+                    fontSize: '15px', 
+                    lineHeight: '1.7', 
+                    color: 'rgba(255,255,255,0.8)', 
+                    fontStyle: 'italic',
+                    display: '-webkit-box',
+                    WebkitLineClamp: 3,
+                    WebkitBoxOrient: 'vertical',
+                    overflow: 'hidden',
+                    marginBottom: '8px'
+                  }}>
+                    "{t.text}"
+                  </p>
+                  <span style={{ fontSize: '13px', color: '#58C7E8', fontWeight: '600' }}>
+                    Read full review on Thumbtack <i className="bi bi-arrow-right" style={{ fontSize: '12px' }}></i>
+                  </span>
+                </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                   <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'linear-gradient(135deg, #0E8FD8, #34D2B4)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 'bold', fontSize: '18px' }}>
                     {t.name.charAt(0)}
@@ -372,7 +408,7 @@ const Home: React.FC = () => {
                     <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)' }}>{t.role}</div>
                   </div>
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         </div>
