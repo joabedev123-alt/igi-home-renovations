@@ -21,10 +21,10 @@ const services = [
 
 
 const process = [
-  { num: '01', title: 'Free Consultation', desc: 'We visit your property, understand your vision, and assess the scope of work.' },
-  { num: '02', title: 'Detailed Estimate', desc: 'Transparent, itemized quote with no hidden fees or surprises.' },
-  { num: '03', title: 'Expert Execution', desc: 'Our skilled team delivers quality craftsmanship on schedule.' },
-  { num: '04', title: 'Final Walkthrough', desc: 'We review every detail together until you are 100% satisfied.' },
+  { num: '01', title: 'Consulta gratuita', desc: 'Visitamos a sua propriedade, compreendemos a sua visão e avaliamos o âmbito do trabalho.' },
+  { num: '02', title: 'Estimativa detalhada', desc: 'Orçamento transparente e detalhado, sem taxas ocultas ou surpresas.' },
+  { num: '03', title: 'Execução especializada', desc: 'Nossa equipe qualificada entrega serviços de alta qualidade dentro do prazo.' },
+  { num: '04', title: 'Guia final', desc: 'Analisamos juntos cada detalhe até que você esteja 100% satisfeito.' },
 ];
 
 const Home: React.FC = () => {
@@ -260,12 +260,12 @@ const Home: React.FC = () => {
       <section className="section-padding" style={{ background: 'white' }}>
         <div className="container-custom">
           <motion.div {...fadeUp} style={{ textAlign: 'center', marginBottom: '56px' }}>
-            <span className="section-label" style={{ justifyContent: 'center' }}>How It Works</span>
+            <span className="section-label" style={{ justifyContent: 'center' }}>Como funciona</span>
             <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: '800', marginBottom: '16px' }}>
-              Simple & Stress-Free Process
+              Processo simples e sem estresse
             </h2>
             <p style={{ fontSize: '17px', color: '#475569', maxWidth: '500px', margin: '0 auto', lineHeight: '1.7' }}>
-              Getting your renovation started is easy. We handle every detail so you don't have to.
+              Começar a sua reforma é fácil. Nós cuidamos de todos os detalhes para que você não precise se preocupar com nada.
             </p>
           </motion.div>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
@@ -275,7 +275,7 @@ const Home: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.15 }}
+                transition={{ duration: 0.5, delay: i * 1.5 }}
                 className="process-step"
                 style={{ padding: '0 20px', flex: '1 1 200px', maxWidth: '280px' }}
               >
