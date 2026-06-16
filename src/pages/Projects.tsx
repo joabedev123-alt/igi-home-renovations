@@ -50,7 +50,6 @@ const projects = [
     desc: 'Full kitchen remodel with new cabinets, quartz countertops, and elegant tile backsplash.',
     images: [
       '/kitchen/cozinha1.jpeg',
-      '/kitchen/cozinha2.png',
       '/kitchen/WhatsApp Image 2026-06-16 at 11.42.40.jpeg',
       '/kitchen/WhatsApp Image 2026-06-16 at 11.42.40 (1).jpeg',
       '/kitchen/WhatsApp Image 2026-06-16 at 11.42.40 (2).jpeg',
