@@ -56,7 +56,7 @@ const About: React.FC = () => {
                 IGI Home Renovations was founded on a simple belief: homeowners and real estate investors deserve a contractor they can trust — one who delivers exceptional quality, shows up on time, and communicates clearly from day one until the final walkthrough.
               </p>
               <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#475569', marginBottom: '20px' }}>
-                With over 10 years of experience in residential renovations, our team has completed more than 100 projects across Florida, New Jersey, and Pennsylvania — from small bathroom upgrades to full gut renovations for fix-and-flip investors.
+                With over 10 years of experience in residential renovations, our team has completed more than 1,000 projects across Florida, New Jersey, and Pennsylvania — from small bathroom upgrades to full gut renovations for fix-and-flip investors.
               </p>
               <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#475569' }}>
                 We specialize in bathrooms, kitchens, flooring, painting, and full project management — bringing the same level of care and professionalism to every project, regardless of size.
@@ -80,7 +80,7 @@ const About: React.FC = () => {
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(80px, 1fr))', gap: '10px' }}>
                   {[
-                    { number: '100+', label: 'Completed Projects', icon: 'bi-house-check' },
+                    { number: '1000+', label: 'Completed Projects', icon: 'bi-house-check' },
                     { number: '3', label: 'Licensed States', icon: 'bi-geo-alt' },
                     { number: '10+', label: 'Years of Experience', icon: 'bi-calendar-check' },
                     { number: '5★', label: 'Average Rating', icon: 'bi-star' },

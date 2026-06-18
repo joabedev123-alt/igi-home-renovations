@@ -14,17 +14,17 @@ const Footer: React.FC = () => {
               <img src="/logo.png" alt="IGI Home Renovations" style={{ height: '140px', width: 'auto' }} />
             </div>
             <p style={{ fontSize: '14px', lineHeight: '1.6', color: 'rgba(255,255,255,0.5)', marginBottom: '20px' }}>
-              Empresa de reformas residenciais completa, atendendo proprietários, investidores e administradores de imóveis na Flórida, Nova Jersey e Pensilvânia.
+              Complete residential renovation company serving homeowners, investors, and property managers in Florida, New Jersey, and Pennsylvania.
             </p>
             <div style={{ fontSize: '18px', fontWeight: '700', fontFamily: 'Montserrat', color: 'white', marginBottom: '16px' }}>
               <a href="tel:+13214244693" style={{ color: 'white', textDecoration: 'none' }}>(321) 424-4693</a>
             </div>
             <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
               <a href="tel:+13214244693" className="btn-call" style={{ padding: '10px 16px', fontSize: '13px' }}>
-                <i className="bi bi-telephone-fill"></i> Chamar
+                <i className="bi bi-telephone-fill"></i> Call Now
               </a>
               <a href="sms:+13214244693" className="btn-text" style={{ padding: '10px 16px', fontSize: '13px' }}>
-                <i className="bi bi-chat-dots-fill"></i> Texto
+                <i className="bi bi-chat-dots-fill"></i> Send Text
               </a>
             </div>
             {/* Social Links */}
@@ -49,9 +49,9 @@ const Footer: React.FC = () => {
 
           {/* Company Links */}
           <div>
-            <h4 style={{ fontFamily: 'Montserrat', fontWeight: '700', fontSize: '13px', letterSpacing: '1.5px', textTransform: 'uppercase', color: '#58C7E8', marginBottom: '16px' }}>Empresa</h4>
+            <h4 style={{ fontFamily: 'Montserrat', fontWeight: '700', fontSize: '13px', letterSpacing: '1.5px', textTransform: 'uppercase', color: '#58C7E8', marginBottom: '16px' }}>Company</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              {[['Lar', '/'], ['Serviços', '/services'], ['Projetos', '/projects'], ['Gerenciamento de projetos', '/project-management'], ['Sobre', '/about'], ['Contato', '/contact']].map(([label, path]) => (
+              {[['Home', '/'], ['Services', '/services'], ['Projects', '/projects'], ['Project Management', '/project-management'], ['About', '/about'], ['Contact', '/contact']].map(([label, path]) => (
                 <Link key={path} to={path} className="footer-link">{label}</Link>
               ))}
             </div>
@@ -59,9 +59,9 @@ const Footer: React.FC = () => {
 
           {/* Services Links */}
           <div>
-            <h4 style={{ fontFamily: 'Montserrat', fontWeight: '700', fontSize: '13px', letterSpacing: '1.5px', textTransform: 'uppercase', color: '#58C7E8', marginBottom: '16px' }}>Serviços</h4>
+            <h4 style={{ fontFamily: 'Montserrat', fontWeight: '700', fontSize: '13px', letterSpacing: '1.5px', textTransform: 'uppercase', color: '#58C7E8', marginBottom: '16px' }}>Services</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              {['Reforma de banheiro', 'Remodelação de cozinha', 'Piso de vinil de luxo (LVP)', 'Azulejo cerâmico', 'Pintura de Interiores', 'Pintura Exterior', 'Pintores profissionais IGI', 'Reforma e revenda', 'Reforma completa de casa'].map(s => (
+              {['Bathroom Remodeling', 'Kitchen Remodeling', 'Luxury Vinyl Plank (LVP)', 'Ceramic Tile', 'Interior Painting', 'Exterior Painting', 'IGI Pro Painters', 'Fix & Flip', 'Full Home Renovation'].map(s => (
                 <Link key={s} to="/services" className="footer-link">{s}</Link>
               ))}
             </div>
@@ -69,9 +69,9 @@ const Footer: React.FC = () => {
 
           {/* Service Areas */}
           <div>
-            <h4 style={{ fontFamily: 'Montserrat', fontWeight: '700', fontSize: '13px', letterSpacing: '1.5px', textTransform: 'uppercase', color: '#58C7E8', marginBottom: '16px' }}>Áreas de atendimento</h4>
+            <h4 style={{ fontFamily: 'Montserrat', fontWeight: '700', fontSize: '13px', letterSpacing: '1.5px', textTransform: 'uppercase', color: '#58C7E8', marginBottom: '16px' }}>Service Areas</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              {['Área Metropolitana de Orlando', 'Kissimmee', 'Santa Nuvem', 'Condado de Osceola', 'Condado de Orange', 'Nova Jersey', 'Pensilvânia'].map(a => (
+              {['Orlando Metro Area', 'Kissimmee', 'St. Cloud', 'Osceola County', 'Orange County', 'New Jersey', 'Pennsylvania'].map(a => (
                 <span key={a} className="footer-link" style={{ cursor: 'default' }}>{a}</span>
               ))}
             </div>
@@ -81,14 +81,14 @@ const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div style={{ paddingTop: '24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
           <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.3)' }}>
-            © 2026 Reformas Residenciais IGI.
+            © 2026 IGI Home Renovations.
           </p>
           <div style={{ display: 'flex', gap: '24px', fontSize: '13px' }}>
-            <Link to="/privacy-policy" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={e => e.currentTarget.style.color = '#58C7E8'} onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.4)'}>Política de Privacidade</Link>
-            <Link to="/terms-of-service" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={e => e.currentTarget.style.color = '#58C7E8'} onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.4)'}>Termos de Serviço</Link>
+            <Link to="/privacy-policy" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={e => e.currentTarget.style.color = '#58C7E8'} onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.4)'}>Privacy Policy</Link>
+            <Link to="/terms-of-service" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={e => e.currentTarget.style.color = '#58C7E8'} onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.4)'}>Terms of Service</Link>
           </div>
           <a href="https://camaly.com.br/" target="_blank" rel="noopener noreferrer" style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '4px', transition: 'color 0.2s ease' }} onMouseEnter={e => e.currentTarget.style.color = '#34D2B4'} onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.5)'}>
-            Produzida com 💚 por CAMALY
+            Made with 💚 by CAMALY
           </a>
         </div>
       </div>

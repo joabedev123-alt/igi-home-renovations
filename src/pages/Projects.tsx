@@ -148,7 +148,7 @@ const ProjectCard = ({ project, index }: { project: any, index: number }) => {
         </div>
       )}
       <div style={{ padding: '24px' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '10px', gap: '12px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px', gap: '12px' }}>
           <h3 style={{ fontWeight: '700', fontSize: '17px', lineHeight: '1.3', color: '#11132A' }}>{project.title}</h3>
           <span style={{
             background: 'linear-gradient(135deg, rgba(14,143,216,0.1), rgba(52,210,180,0.08))',
@@ -159,10 +159,6 @@ const ProjectCard = ({ project, index }: { project: any, index: number }) => {
           }}>
             {project.category}
           </span>
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '10px' }}>
-          <i className="bi bi-geo-alt" style={{ color: '#58C7E8', fontSize: '13px' }} />
-          <span style={{ fontSize: '13px', color: '#475569' }}>{project.location}</span>
         </div>
         <p style={{ fontSize: '14px', lineHeight: '1.65', color: '#475569' }}>{project.desc}</p>
       </div>
@@ -254,10 +250,10 @@ const Projects: React.FC = () => {
         <div className="container-custom" style={{ textAlign: 'center', position: 'relative', zIndex: 1 }}>
           <motion.div {...fadeUp}>
             <h2 style={{ fontFamily: 'Montserrat', fontWeight: '800', fontSize: 'clamp(28px, 4vw, 48px)', color: 'white', marginBottom: '16px' }}>
-              Want Your Home in Our Portfolio?
+              Ready to Transform Your Home?
             </h2>
             <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.65)', maxWidth: '460px', margin: '0 auto 40px', lineHeight: '1.7' }}>
-              Let's plan your renovation. Call or text us for a free consultation and estimate.
+              Let's plan your renovation. Call or text us for a free consultation.
             </p>
             <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
               <a href="tel:+13214244693" className="btn-call" style={{ padding: '16px 36px', fontSize: '16px' }}>
