@@ -423,7 +423,7 @@ const Home: React.FC = () => {
               Where We Work
             </h2>
             <p style={{ fontSize: '17px', color: '#475569', maxWidth: '800px', margin: '0 auto', lineHeight: '1.7' }}>
-              Serving the Greater Philadelphia Metro Area including Bucks, Montgomery, Chester, Delaware and Philadelphia Counties in PA, and Burlington, Camden and Mercer Counties in NJ. Proudly serving Florida.
+              Proudly serving homeowners and businesses throughout Central Florida, Pennsylvania, and New Jersey with expert home renovation services and exceptional craftsmanship.
             </p>
           </motion.div>
 
@@ -464,14 +464,20 @@ const Home: React.FC = () => {
       </section>
 
       {/* CTA */}
-      <section className="cta-section" style={{ background: 'linear-gradient(135deg, #0F4C81 0%, #11132A 50%, #0E8FD8 100%)', padding: '96px 0' }}>
-        <div className="container-custom" style={{ textAlign: 'center' }}>
+      <section className="cta-section" style={{ 
+        position: 'relative', 
+        padding: '120px 0',
+        backgroundImage: 'linear-gradient(135deg, rgba(17,19,42,0.65) 0%, rgba(15,27,61,0.55) 50%, rgba(14,143,216,0.35) 100%), url("/imagens%20zip/Fotos%20IGI%20Home%20Renovation/Photo%20Feb%2002%202026,%203%2040%2016%20PM.jpg")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center calc(50% + 40px)',
+      }}>
+        <div className="container-custom" style={{ textAlign: 'center', position: 'relative', zIndex: 1 }}>
           <motion.div {...fadeUp}>
             <h2 style={{ fontFamily: 'Montserrat', fontWeight: '800', fontSize: 'clamp(28px, 4vw, 48px)', color: 'white', marginBottom: '16px' }}>
               Ready to Start Your Project?
             </h2>
             <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.65)', maxWidth: '480px', margin: '0 auto 40px', lineHeight: '1.7' }}>
-              Contact us today for a free, no-obligation estimate. Let's bring your vision to life.
+              Contact us for a free estimate
             </p>
             <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
               <a href="tel:+13214244693" className="btn-call" style={{ padding: '16px 36px', fontSize: '16px' }}>

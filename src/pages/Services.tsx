@@ -162,8 +162,14 @@ const Services: React.FC = () => {
       </section>
 
       {/* CTA */}
-      <section className="cta-section" style={{ background: 'linear-gradient(135deg, #0F4C81 0%, #11132A 50%, #0E8FD8 100%)', padding: '96px 0' }}>
-        <div className="container-custom" style={{ textAlign: 'center' }}>
+      <section className="cta-section" style={{ 
+        position: 'relative', 
+        padding: '120px 0',
+        backgroundImage: 'linear-gradient(135deg, rgba(17,19,42,0.65) 0%, rgba(15,27,61,0.55) 50%, rgba(14,143,216,0.35) 100%), url("/imagens%20zip/Fotos%20IGI%20Home%20Renovation/Photo%20Feb%2002%202026,%203%2040%2016%20PM.jpg")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center calc(50% + 40px)',
+      }}>
+        <div className="container-custom" style={{ textAlign: 'center', position: 'relative', zIndex: 1 }}>
           <motion.div {...fadeUp}>
             <h2 style={{ fontFamily: 'Montserrat', fontWeight: '800', fontSize: 'clamp(28px, 4vw, 48px)', color: 'white', marginBottom: '16px' }}>
               Not Sure Which Service You Need?

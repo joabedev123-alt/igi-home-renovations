@@ -93,12 +93,6 @@ const projects = [
       '/Flooring/WhatsApp Image 2026-06-16 at 11.44.10 (2).jpeg'
     ]
   },
-  { id: 7, title: 'Interior Painting — 4-Unit', category: 'Painting', location: 'Orlando, FL', desc: 'Multi-unit interior painting for property management company with fast 3-day turnaround.' },
-  { id: 8, title: 'Ceramic Tile Bathroom', category: 'Bathroom', location: 'Kissimmee, FL', desc: 'Floor-to-ceiling ceramic tile installation in a primary bathroom shower and floor.' },
-  { id: 9, title: 'Kitchen Cabinet Refresh', category: 'Kitchen', location: 'Pennsylvania', desc: 'Cabinet painting, new hardware, and backsplash tile to modernize a dated kitchen.' },
-  { id: 10, title: 'LVP + Tile Combo', category: 'Flooring', location: 'St. Cloud, FL', desc: 'LVP in living areas with matching ceramic tile in wet areas for a cohesive look.' },
-  { id: 11, title: 'Full Home Interior Paint', category: 'Painting', location: 'Osceola County, FL', desc: 'Complete interior paint job with wall prep, priming, ceilings, trim, and doors.' },
-  { id: 12, title: 'Investor Renovation Package', category: 'Full Renovation', location: 'New Jersey', desc: 'Bathroom, kitchen refresh, LVP flooring, and full interior paint for resale.' },
 ];
 
 const ProjectCard = ({ project, index }: { project: any, index: number }) => {
@@ -192,9 +186,15 @@ const Projects: React.FC = () => {
             <h1 style={{ fontFamily: 'Montserrat', fontWeight: '800', fontSize: 'clamp(32px, 5vw, 56px)', color: 'white', lineHeight: '1.15', marginBottom: '20px' }}>
               Renovation Works: <br /><span className="gradient-text">Before & After</span>
             </h1>
-            <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.65)', lineHeight: '1.75' }}>
+            <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.65)', lineHeight: '1.75', marginBottom: '24px' }}>
               Real work. Incredible results. Browse our portfolio to see complete space transformations in our projects across Florida, New Jersey, and Pennsylvania.
             </p>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px', color: 'rgba(255,255,255,0.85)', fontSize: '16px' }}>
+              <li style={{ display: 'flex', alignItems: 'center' }}><i className="bi bi-check-circle-fill" style={{ color: '#58C7E8', marginRight: '10px', fontSize: '18px' }}></i> 1,000+ Paint Jobs Completed</li>
+              <li style={{ display: 'flex', alignItems: 'center' }}><i className="bi bi-check-circle-fill" style={{ color: '#58C7E8', marginRight: '10px', fontSize: '18px' }}></i> 300+ Bathrooms Remodeled</li>
+              <li style={{ display: 'flex', alignItems: 'center' }}><i className="bi bi-check-circle-fill" style={{ color: '#58C7E8', marginRight: '10px', fontSize: '18px' }}></i> 200+ Kitchens Renovated</li>
+              <li style={{ display: 'flex', alignItems: 'center' }}><i className="bi bi-shield-fill-check" style={{ color: '#58C7E8', marginRight: '10px', fontSize: '18px' }}></i> Licensed in 3 States</li>
+            </ul>
           </motion.div>
         </div>
       </section>
@@ -244,8 +244,14 @@ const Projects: React.FC = () => {
       </section>
 
       {/* CTA */}
-      <section className="cta-section" style={{ background: 'linear-gradient(135deg, #0F4C81 0%, #11132A 50%, #0E8FD8 100%)', padding: '96px 0' }}>
-        <div className="container-custom" style={{ textAlign: 'center' }}>
+      <section className="cta-section" style={{ 
+        position: 'relative', 
+        padding: '120px 0',
+        backgroundImage: 'linear-gradient(135deg, rgba(17,19,42,0.65) 0%, rgba(15,27,61,0.55) 50%, rgba(14,143,216,0.35) 100%), url("/imagens%20zip/Fotos%20IGI%20Home%20Renovation/Photo%20Feb%2002%202026,%203%2040%2016%20PM.jpg")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center calc(50% + 40px)',
+      }}>
+        <div className="container-custom" style={{ textAlign: 'center', position: 'relative', zIndex: 1 }}>
           <motion.div {...fadeUp}>
             <h2 style={{ fontFamily: 'Montserrat', fontWeight: '800', fontSize: 'clamp(28px, 4vw, 48px)', color: 'white', marginBottom: '16px' }}>
               Want Your Home in Our Portfolio?

@@ -31,10 +31,10 @@ const clients = [
     tags: ['Stress-Free', 'Single Point of Contact', 'Full Coordination'],
   },
   {
-    icon: 'bi-people-fill',
-    title: 'Property Managers',
-    desc: "We handle multi-unit renovation projects for landlords and property management companies — coordinating all trades and maintaining your portfolio efficiently.",
-    tags: ['Multi-Unit', 'Consistent Quality', 'Portfolio Ready'],
+    icon: 'bi-list-task',
+    title: 'Project Management',
+    desc: 'We provide end-to-end oversight for your renovation, coordinating trades, managing timelines, and ensuring budget control for a stress-free process.',
+    tags: ['Full Coordination', 'Budget Control', 'On-Time Delivery'],
   },
 ];
 
@@ -55,7 +55,7 @@ const ProjectManagement: React.FC = () => {
             </p>
             <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
               <a href="tel:+13214244693" className="btn-call">
-                <i className="bi bi-telephone-fill" /> Call to Discuss Your Project
+                <i className="bi bi-telephone-fill" /> Get Your Free Estimate
               </a>
               <a href="sms:+13214244693" className="btn-text">
                 <i className="bi bi-chat-dots-fill" /> Text Us
@@ -103,25 +103,23 @@ const ProjectManagement: React.FC = () => {
             >
               <div style={{ background: 'linear-gradient(135deg, #0F1B3D 0%, #11132A 100%)', borderRadius: '20px', padding: '40px', border: '1px solid rgba(88,199,232,0.12)' }}>
                 <h3 style={{ fontFamily: 'Montserrat', fontWeight: '700', fontSize: '20px', color: 'white', marginBottom: '8px' }}>
-                  What's Included
+                  How We Work With You
                 </h3>
-                <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.5)', marginBottom: '28px' }}>
-                  Every project management engagement includes:
+                <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.5)', marginBottom: '28px', lineHeight: '1.6' }}>
+                  Every project is different — so we offer flexible engagement models:
                 </p>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                   {[
-                    'Dedicated project manager for your property',
-                    'Detailed scope of work & budget breakdown',
-                    'All trade coordination (plumbing, tile, paint, etc.)',
-                    'Material sourcing & procurement',
-                    'Daily site supervision & quality checks',
-                    'Weekly progress reports',
-                    'Final walkthrough & punch list',
-                    'Single invoice for all completed work',
+                    { title: 'Full Project Management', desc: 'You bring the vision, we handle everything else. We manage your contractors, coordinate all trades, source materials, and deliver the finished project. Ideal for investors and property owners who want hands-off oversight.' },
+                    { title: 'Your Team, Our Management', desc: 'Already have a crew or subcontractors you trust? We step in as your project manager — coordinating your team, keeping the schedule on track, and making sure quality standards are met.' },
+                    { title: 'Estimating & Take-Off Only', desc: 'Need accurate numbers before you commit? We provide detailed scope of work, quantity take-offs, and cost breakdowns so you can bid confidently or make informed investment decisions.' },
                   ].map(item => (
-                    <div key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                      <i className="bi bi-check-circle-fill" style={{ color: '#34D2B4', fontSize: '16px', flexShrink: 0, marginTop: '2px' }} />
-                      <span style={{ fontSize: '14px', color: 'rgba(255,255,255,0.75)', lineHeight: '1.5' }}>{item}</span>
+                    <div key={item.title} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                      <i className="bi bi-check-circle-fill" style={{ color: '#34D2B4', fontSize: '18px', flexShrink: 0, marginTop: '2px' }} />
+                      <div>
+                        <h4 style={{ color: 'white', fontSize: '15px', fontWeight: '700', marginBottom: '4px' }}>{item.title}</h4>
+                        <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', lineHeight: '1.6', margin: 0 }}>{item.desc}</p>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -222,8 +220,14 @@ const ProjectManagement: React.FC = () => {
       </section>
 
       {/* CTA */}
-      <section className="cta-section" style={{ background: 'linear-gradient(135deg, #0F4C81 0%, #11132A 50%, #0E8FD8 100%)', padding: '96px 0' }}>
-        <div className="container-custom" style={{ textAlign: 'center' }}>
+      <section className="cta-section" style={{ 
+        position: 'relative', 
+        padding: '120px 0',
+        backgroundImage: 'linear-gradient(135deg, rgba(17,19,42,0.65) 0%, rgba(15,27,61,0.55) 50%, rgba(14,143,216,0.35) 100%), url("/imagens%20zip/Fotos%20IGI%20Home%20Renovation/Photo%20Feb%2002%202026,%203%2040%2016%20PM.jpg")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center calc(50% + 40px)',
+      }}>
+        <div className="container-custom" style={{ textAlign: 'center', position: 'relative', zIndex: 1 }}>
           <motion.div {...fadeUp}>
             <h2 style={{ fontFamily: 'Montserrat', fontWeight: '800', fontSize: 'clamp(28px, 4vw, 48px)', color: 'white', marginBottom: '16px' }}>
               Let's Manage Your Next Project
