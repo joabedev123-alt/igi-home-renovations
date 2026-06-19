@@ -19,9 +19,18 @@ const values = [
 ];
 
 const areas = [
-  { state: 'Florida', cities: ['Orlando Metro Area', 'Kissimmee', 'St. Cloud', 'Osceola County', 'Orange County'] },
-  { state: 'New Jersey', cities: ['Northern NJ', 'Central NJ', 'Contact us for full coverage area'] },
-  { state: 'Pennsylvania', cities: ['Contact us for coverage area details'] },
+  { 
+    state: 'Florida', 
+    cities: ['Hillsborough County', 'Polk County', 'Osceola County', 'Orange County', 'Seminole County', 'Brevard County', 'Lake County', 'Volusia County'] 
+  },
+  { 
+    state: 'Pennsylvania', 
+    cities: ['Chester County', 'Montgomery County', 'Bucks County', 'Delaware County', 'Philadelphia County'] 
+  },
+  { 
+    state: 'New Jersey', 
+    cities: ['Burlington County', 'Camden County', 'Mercer County', 'Gloucester County', 'Middlesex County', 'Monmouth County'] 
+  }
 ];
 
 const About: React.FC = () => {

@@ -290,7 +290,7 @@ const Home: React.FC = () => {
                 {[
                   { icon: 'bi-house-check', label: 'Residential', sub: 'Homeowners' },
                   { icon: 'bi-building', label: 'Investment', sub: 'Fix & Flip' },
-                  { icon: 'bi-people-fill', label: 'Property Mgmt', sub: 'Investors' },
+                  { icon: 'bi-people-fill', label: 'Project Management', sub: '' },
                   { icon: 'bi-palette', label: 'IGI Pro', sub: 'Painting Division' },
                 ].map(item => (
                   <div key={item.label} className="card-dark" style={{ padding: '28px 24px', textAlign: 'center' }}>
